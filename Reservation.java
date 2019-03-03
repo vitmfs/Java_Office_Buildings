@@ -1,49 +1,34 @@
-package office_buildings;
 
-import java.time.LocalDateTime;
-
+/**
+ * Write a description of class Reservation here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
 public class Reservation {
-	
-	private LocalDateTime dateOfReservation;
-	private Office reservedOffice;
-	private String potentialClientName;
-	
-	public Reservation(String potentialClientNameT, Office reservedOfficeT) {
-		
-		dateOfReservation = LocalDateTime.now();
-		potentialClientName = potentialClientNameT;
-		reservedOffice = reservedOfficeT;
-	}
-	
-	public LocalDateTime getDateOfReservation() {
-		
-		return dateOfReservation;
-	}
-	
-	public String getPotentialClientName() {
-		
-		return potentialClientName;
-	}
-	
-	public String setPotentialClientName(String potentialClientNameT) {
-		
-		return potentialClientName;
-	}
-	
-	public Office getReservedOffice() {
-		
-		return reservedOffice;
-	}
-	
-	public void setReservedOffice(Office reservedOfficeT) {
-		
-		reservedOffice = reservedOfficeT;
-	}
-	
-	public String toString() {
-		
-		return "Office " + this.getReservedOffice().getIdCodeOfOffice() + " was reserved by " +
-				getPotentialClientName() + "in " + getDateOfReservation().toString();
-	}
 
+    private String nameOfOwnerThatMadeReservation;
+
+    /**
+     * Constructor for objects of class Reservation
+     */
+    public Reservation( String nameOfOwnerThatMadeReservationT) {
+       
+        nameOfOwnerThatMadeReservation = nameOfOwnerThatMadeReservationT;
+        
+    }
+    
+    public String getNameOfOwnerThatMadeReservation() { return nameOfOwnerThatMadeReservation; }
+
+    /**
+     * An example of a method - replace this comment with your own
+     * 
+     * @param  y   a sample parameter for a method
+     * @return     the sum of x and y 
+     */
+    public int sampleMethod(int y)
+    {
+        // put your code here
+        return 0;
+    }
 }

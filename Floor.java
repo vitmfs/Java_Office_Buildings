@@ -1,99 +1,74 @@
-package office_buildings;
+/**
+ * Write a description of class Floor here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
 
 import java.util.ArrayList;
 
-/**
-* Write a description of class Floor here.
-* 
-* @author (your name) 
-* @version (a version number or a date)
-*/
-public class Floor {
-	
-	private String nameOfFloor;
-	private double lengthOfFloor;
-	private double widthOfFloor;
-	private ArrayList<Office> floorOffices;
-	
-	public Floor(String NameOfFloorT, double lengthOfFloorT, double widthOfFloorT) {
-		
-		nameOfFloor = NameOfFloorT;
-		lengthOfFloor = lengthOfFloorT;
-		widthOfFloor = widthOfFloorT;
-		floorOffices = new ArrayList<Office>();
-	}
-	
-	public String toString() {
-		
-		String descriptionOfFloor = "\n\t" + getNameOfFloor() + " " +  getAreaOfFloor() + " square meters " + " (" + getLengthOfFloor() + " by " + getWidthOfFloor() + ")\n\n";
-		
-		for (Office eachOffice: floorOffices) {
-			
-			descriptionOfFloor += "\t" + eachOffice.toString() + "\n";
-			
-		}
-		
-		return descriptionOfFloor;
-	}
-	
-	public String getNameOfFloor() {
-		
-		return nameOfFloor;
-	}
-	
-	public void setNameOfFloor(String nameOfFloorT) {
-		
-		nameOfFloor = nameOfFloorT;
-	}
-	
-	public double getLengthOfFloor() {
-		
-		return lengthOfFloor;
-	}
-	
-	public double getWidthOfFloor() {
-		
-		return widthOfFloor;
-	}
-	
-	public ArrayList<Office> getFloorOffices() {
-		
-		return floorOffices;
-	}
-	
-	public void addOffice(Office newOfficeT) {
-		
-		floorOffices.add(newOfficeT);
-		
-	}
-	
-	public double getAreaOfFloor() {
-		
-		return getLengthOfFloor() * getWidthOfFloor();
-	}
-	
-	public int calcuteCapacity(double officesLengthT, double officesWidthT) {
-		
-		int maximumCapacity = 0;
-		
-		double timesThatOfficeLengthFitsFloorLength = new Double(lengthOfFloor/officesLengthT);
-		int timesThatOfficeLengthFitsFloorLengthInt = (int) timesThatOfficeLengthFitsFloorLength;
-		
-		double timesThatOfficeWidthFitsFloorWidth = new Double(widthOfFloor/officesWidthT);
-		int timesThatOfficeWidthFitsFloorWidthInt = (int) timesThatOfficeWidthFitsFloorWidth;
-		
-		int howManyOficesCanIFitOption1 = (timesThatOfficeLengthFitsFloorLengthInt * timesThatOfficeWidthFitsFloorWidthInt);
+public class Floor extends ArrayList<Office> implements IStructure
+{
+    
+    private String  nameOfFloor;
+    private double  lengthOfFloor;
+    private double  widthOfFloor;
+    
+    /**
+     * Constructor for objects of class Floor
+     */
+    public Floor(   String nameOfFloorT, 
+                    double lengthOfFloorT,
+                    double widthOfFloorT) {
+        
+        nameOfFloor     = nameOfFloorT;
+        lengthOfFloor   = lengthOfFloorT;
+        widthOfFloor    = widthOfFloorT;
 
-		double timesThatOfficeWidthFitsFloorLength = new Double(lengthOfFloor/officesWidthT);
-		int timesThatOfficeWidthFitsFloorLengthInt = (int) timesThatOfficeWidthFitsFloorLength;
-		
-		double timesThatOfficeLengthFitsFloorWidth = new Double(widthOfFloor/officesWidthT);
-		int timesThatOfficeLengthFitsFloorWidthInt = (int) timesThatOfficeLengthFitsFloorWidth;
-		
-		int howManyOficesCanIFitOption2 = timesThatOfficeWidthFitsFloorLengthInt * timesThatOfficeLengthFitsFloorWidthInt;
-		
-		maximumCapacity = (howManyOficesCanIFitOption1 > howManyOficesCanIFitOption2)?howManyOficesCanIFitOption1:howManyOficesCanIFitOption2;
-		
-		return maximumCapacity;
-	}
+    }
+    
+    public void getName() {
+    
+    }
+    
+    public void enter() {
+    
+    }
+    
+    
+    public void exit() {
+    
+    }
+    
+    
+    public void location() {
+    
+    
+    }
+    
+    public String toString() {
+        
+        return "Name of Floor: " + nameOfFloor ;
+    
+    }
+
+    /**
+     * An example of a method - replace this comment with your own
+     * 
+     * @param  y   a sample parameter for a method
+     * @return     the sum of x and y 
+     */
+    public int sampleMethod(int y)
+    {
+        // put your code here
+        return 0;
+    }
+
+    public Office addOffice( Office newOfficeT ) {
+
+        this.add( newOfficeT );
+        
+        return newOfficeT;
+
+    }
 }
